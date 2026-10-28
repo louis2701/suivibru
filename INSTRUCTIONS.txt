@@ -1,0 +1,12 @@
+REPAIRFLOW - Installation GitHub / Netlify
+
+1. Remplacer dans le depot GitHub les fichiers public/index.html, netlify/functions/repairs.js, netlify.toml, package.json.
+2. AJOUTER netlify/functions/auth.js et netlify/functions/session.js.
+3. Conserver private/seed.json avec les 19 reparations (fourni dans ce dossier).
+4. Dans Netlify > Project configuration > Environment variables, ajouter :
+   REPAIRFLOW_PASSWORD = mot de passe fort de 12 caracteres minimum
+   REPAIRFLOW_SESSION_SECRET = chaine aleatoire DIFFERENTE de 32 caracteres minimum
+   Portee : Functions. Ne jamais les mettre dans GitHub ou index.html.
+5. Relancer un deploiement Netlify, puis tester la connexion.
+6. IMPORTANT : le stockage Netlify Blobs presente deja MissingBlobsEnvironmentError ; cette version ne corrige pas cette erreur de plateforme. Si elle persiste, reparer Blobs avant d'utiliser les reparations.
+7. Mot de passe partage : pas de traçabilite par utilisateur. Obtenir autorisation avant hebergement de donnees professionnelles.

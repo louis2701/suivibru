@@ -1,0 +1,5 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-GQyzSWpimZLqxQojl5urNu1+TMpfDIHX28lOLQSuVNE=' 'sha256-YLh02pCA9WXXTUSzukb8nuFijl/7XtrWS08x4u9BRzA=' 'sha256-cK/tG03InGBI8NWMbfQTu5exy1gN0uTPsKw74QW/8Bo=' 'sha256-kpX4Xdmb4DV9xVWgHQN2UNDjhcp28PxfylrOSU87fno='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
