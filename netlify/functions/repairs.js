@@ -1,4 +1,4 @@
-const {getStore}=require('@netlify/blobs');
+const {getStore,connectLambda}=require('@netlify/blobs');
 const seed=require('../../private/seed.json');
 const {valid,sameOrigin}=require('./session');
 const key='shared-repairflow-data';
@@ -9,6 +9,7 @@ exports.handler=async(event)=>{
   if(!['GET','POST'].includes(event.httpMethod))return response(405,{error:'Méthode non autorisée'});
   if(!valid(event))return response(401,{error:'Connexion requise'});
   if(event.httpMethod==='POST'&&!sameOrigin(event))return response(403,{error:'Origine non autorisée'});
+  connectLambda(event);
   const store=getStore('repairflow-sqy');
   let saved=await store.get(key,{type:'json'});
   if(!saved){saved={state:seed,version:0};await store.setJSON(key,saved);}
